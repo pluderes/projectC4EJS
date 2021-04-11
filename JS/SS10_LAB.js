@@ -5,11 +5,12 @@ async function getDataAPI() {
 
   let thumb = document.getElementById(`imgFood`);
   let name = document.getElementById(`name`);
-  let introduce = document.getElementById(`introduce`);
+  // let introduce = document.getElementById(`introduce`);
   let address = document.getElementById(`address`);
-  let review = document.getElementById(`review`);
+  // let review = document.getElementById(`review`);
   // let link = document.getElementById(`link`);
   // let ingred = document.getElementById(`listIngred`);
+  let content = document.getElementById(`detail`);
 
   let size = Object.keys(data).length;
   console.log(size);
@@ -18,9 +19,10 @@ async function getDataAPI() {
 
   thumb.src = data[index].Image;
   name.innerHTML += `${data[index].Name}`;
-  address.innerHTML += `<p style="font-weight: bold;">Address: </p> ${data[index].Address}`;
-  introduce.innerHTML += `<p style="font-weight: bold;">Instructions: </p> ${data[index].Introduce}`;
-  review.innerHTML += `<p style="font-weight: bold;">Review: <a href="${data[index].Review}">${data[index].Review}</a></p>`;
+  address.innerHTML += `<p style="font-weight: bold;">Địa chỉ: </p> ${data[index].Address}`;
+  content.insertAdjacentElement(`beforeend`,``)
+  // introduce.innerHTML += `<p style="font-weight: bold;">Instructions: </p> ${data[index].Introduce}`;
+  // review.innerHTML += `<p style="font-weight: bold;">Review: <a href="${data[index].Review}">${data[index].Review}</a></p>`;
   //------------------------------------------------------------
   // let food = data.meals[0];
 
