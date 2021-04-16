@@ -15,7 +15,7 @@ async function getLoginAPI() {
             if (userName.value === data[i].user_name && passWord.value === data[i].user_password) {
                 // console.log(userName.value);
                 // console.log(passWord.value);
-                location.href = "Pr_C4EJS.html";
+                location.href = "allfood.html";
                 break;
             }
             if (userName.value !== data[i].user_name || passWord.value !== data[i].user_password || 

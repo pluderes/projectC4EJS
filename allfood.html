@@ -5,85 +5,123 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Feeling hungry?</title>
-    <link rel="stylesheet" href="CSS/allfood.css">
+    <link rel="stylesheet" href="CSS/allfood.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
     />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
   </head>
-  <body style="background: url('Image/banner2.jpg'); background-size: cover; background-repeat: no-repeat;">
-      <!-- menu -->
-    <nav class="navbar fixed-top navbar-expand-md navbar-dark navbar-theme" style="padding: unset;">
-        <a class="navbar-brand" href="index.html">
-          <img src="Image/logoFood36streets.png" width="50" height="50" style="margin-left: 35px;" alt="">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-md-start" id="main-menu">
-          <ul class="navbar-nav text-uppercase">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Trang chủ</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">Thông tin</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="dangNhapHTML.html">Đăng nhập</a>
-            </li>
-          </ul>
-        </div>
-        <form action="">
-            <input type="search">
-            <i class="fa fa-search"></i>
-        </form>
-      </nav>
-      <!-- end menu -->
-      <div>
-        <h1 id="title">Tìm một món nào!</h1>
+  <body
+    style="
+      background: url('Image/banner2.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+    "
+  >
+    <!-- menu -->
+    <nav
+      class="navbar fixed-top navbar-expand-md navbar-dark navbar-theme"
+      style="padding: unset"
+    >
+      <a class="navbar-brand" href="index.html">
+        <img
+          src="Image/logoFood36streets.png"
+          width="50"
+          height="50"
+          style="margin-left: 35px"
+          alt=""
+        />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#main-menu"
+        aria-controls="main-menu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="collapse navbar-collapse justify-content-md-start"
+        id="main-menu"
+      >
+        <ul class="navbar-nav text-uppercase">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Trang chủ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="aboutdemo.html">Về tác giả</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="dangNhapHTML.html">Đăng nhập</a>
+          </li>
+        </ul>
       </div>
-        <div class="container">
-          <div class="row">
-            <!-- list food -->
-              <div class="wrapper col-sm-3">
-                  <div class="card" id="border">
-                    <img id="img1" class="imgfood" src="Image/ride1.jpg" alt="" />
-                    <div class="info">
-                      <h3 class="name">nom bo ham long ben kia cau co con cho dang ia</h3>
-                    </div>
-                  </div>
-              </div>
-              <div class="wrapper col-sm-3">
-                <div class="card" id="border">
-                  <img id="img2" class="imgfood" src="Image/ride1.jpg" alt="" />
-                  <div class="info">
-                    <h3 class="name">nom bo ham long ben kia cau co con cho dang ia</h3>
-                  </div>
-                </div>
+      <form action="">
+        <input type="search" />
+        <i class="fa fa-search"></i>
+      </form>
+    </nav>
+    <!-- end menu -->
+    <div>
+      <h1 id="title">Tìm một món nào!</h1>
+    </div>
+    <div class="container">
+      <div class="row">
+        <!-- list food -->
+        <div class="wrapper col-sm-3">
+          <div class="card" id="border">
+            <img id="img1" class="imgfood" src="Image/ride1.jpg" alt="" />
+            <div class="info">
+              <h3 class="name">
+                nom bo ham long ben kia cau co con cho dang ia
+              </h3>
             </div>
           </div>
         </div>
-        <!-- end list food -->
+      </div>
+    </div>
+    <!-- end list food -->
 
-        <!-- modal -->
-          <div id="myModal" class="modal">
-            <span class="close" style="color: white;">&times;</span>
-            <div class="content">
-              <div class="row" id="detail">
-                  <img id="img01" src="https://cdn01.diadiemanuong.com/ddau/640x/quay-cuong-trong-list-1500-mon-ngon-pho-co-trai-tim-am-thuc-cua-ha-noi-6802b00c636957851304981934.jpg" alt="">
-                  <div id="caption">
-                      <h1>Nộm phố Hàm Long</h1>
-                      <br>
-                      <p>Nộm Thuận - 21 Hàm Long, Quận Hoàn Kiếm, Hà Nội</p>
-                      <p style="max-width: 500px;">Những chiếc há cảo ở đây tuy nhỏ xinh nhưng bên trong nhân thịt lại khá đầy đặn, ăn kèm cùng rau sống và nước chấm chua ngọt cực kỳ hợp. Giá của những chiếc há cảo này lại rẻ đến bất ngờ, chỉ 15k/c nên quán luôn tấp nập khách tới mua. Há cảo ở đây được chiên vàng óng, lớp vỏ bên ngoài giòn tan, khi cho vào miệng nhai đã cực kì. Phần nhân bên trong có thịt xay và mộc nhĩ sần sật. Nước chấm siêu ngon, vị rõ ràng, đủ hương sắc chua mặn ngọt, thêm đu đủ góp cũng ngon nữa.</p>
-                      <p>rating</p>
-                      <a href="https://diadiemanuong.com/ha-noi/nom-thuan-ham-long/ghe-nha-tho-ham-long-an-nom-via-he-ngon-nuc-tieng-gan-xa">review</a>
-                  </div>
-              </div>
-            </div>
+    <!-- modal -->
+    <div id="myModal" class="modal">
+      <span class="close" style="color: white">&times;</span>
+      <div class="content">
+        <div class="row" id="detail">
+          <img
+            id="img01"
+            src="https://cdn01.diadiemanuong.com/ddau/640x/quay-cuong-trong-list-1500-mon-ngon-pho-co-trai-tim-am-thuc-cua-ha-noi-6802b00c636957851304981934.jpg"
+            alt=""
+          />
+          <div id="caption">
+            <h1>Nộm phố Hàm Long</h1>
+            <br />
+            <p>Nộm Thuận - 21 Hàm Long, Quận Hoàn Kiếm, Hà Nội</p>
+            <p style="max-width: 500px">
+              Những chiếc há cảo ở đây tuy nhỏ xinh nhưng bên trong nhân thịt
+              lại khá đầy đặn, ăn kèm cùng rau sống và nước chấm chua ngọt cực
+              kỳ hợp. Giá của những chiếc há cảo này lại rẻ đến bất ngờ, chỉ
+              15k/c nên quán luôn tấp nập khách tới mua. Há cảo ở đây được chiên
+              vàng óng, lớp vỏ bên ngoài giòn tan, khi cho vào miệng nhai đã cực
+              kì. Phần nhân bên trong có thịt xay và mộc nhĩ sần sật. Nước chấm
+              siêu ngon, vị rõ ràng, đủ hương sắc chua mặn ngọt, thêm đu đủ góp
+              cũng ngon nữa.
+            </p>
+            <p>rating</p>
+            <a
+              href="https://diadiemanuong.com/ha-noi/nom-thuan-ham-long/ghe-nha-tho-ham-long-an-nom-via-he-ngon-nuc-tieng-gan-xa"
+              >review</a
+            >
           </div>
-      
+        </div>
+      </div>
+    </div>
   </body>
   <script src="JS/SS10_LAB.js"></script>
   <script src="JS/imgmodal.js"></script>
