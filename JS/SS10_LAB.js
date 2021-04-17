@@ -61,11 +61,25 @@
 //   location.reload();
 // }
 async function getDataAPI() {
-    let promise = await fetch(`https://sheetdb.io/api/v1/62a1kcoxwbvio`);
-    let data = await promise.json();
+  let promise = await fetch(`https://sheetdb.io/api/v1/62a1kcoxwbvio`);
+  let data = await promise.json();
+  console.log(data);
 
-    let name = document.getElementById('foodName');
-    let like = document.getElementById('like');
+  let size = Object.keys(data).length;
+  let index = Math.floor(Math.random() * size);
 
-  let index = Math.floor(Math.random() * size+1);    
-  }
+  let name = document.getElementById("foodName");
+  let like = document.getElementById("like");
+  let img = document.getElementById("imgfood");
+  let randfood = document.getElementById('randomfood');
+
+  console.dir(name);
+  console.dir(like);
+  console.dir(img);
+  console.dir(randfood);
+  img.src = data[index]['food_img'];
+  name.innerHTML += `${data[index].food_name}`;
+  like.innerHTML += `${data[index].like}`;
+}
+
+getDataAPI();

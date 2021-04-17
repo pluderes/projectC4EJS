@@ -112,7 +112,7 @@ body {
   color: #fff;
   opacity: 0;
   margin-top: 300px;
-  margin-right: 80px;
+  margin-right: 20px;
   transition: 0.5s all;
 }
 .card:hover .info {
@@ -120,10 +120,17 @@ body {
   transform: translate(0px,-30px);
 }
 
-.info > h1 {
+.info > h3 {
   margin: 0;
   text-shadow: 5px 5px 10px black;
+  /* word-wrap: break-word; */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 400px;
+  font-weight: bold;
 }
+
 .favo {
   margin-bottom: 10px;
   text-shadow: 5px 5px 10px black;

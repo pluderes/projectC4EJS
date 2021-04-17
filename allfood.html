@@ -69,60 +69,31 @@
       </form>
     </nav>
     <!-- end menu -->
-    <div>
+    <div id="divTitle">
       <h1 id="title">Tìm một món nào!</h1>
     </div>
-    <div class="container">
-      <div class="row">
-        <!-- list food -->
-        <div class="wrapper col-sm-3">
-          <div class="card" id="border">
-            <img id="img1" class="imgfood" src="Image/ride1.jpg" alt="" />
-            <div class="info">
-              <h3 class="name">
-                nom bo ham long ben kia cau co con cho dang ia
-              </h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- end list food -->
 
-    <!-- modal -->
+    <div class="container">
+      <div class="row" id="divRow"></div>
+    </div>
     <div id="myModal" class="modal">
       <span class="close" style="color: white">&times;</span>
-      <div class="content">
+      <div class="content" id="divContent">
         <div class="row" id="detail">
-          <img
-            id="img01"
-            src="https://cdn01.diadiemanuong.com/ddau/640x/quay-cuong-trong-list-1500-mon-ngon-pho-co-trai-tim-am-thuc-cua-ha-noi-6802b00c636957851304981934.jpg"
-            alt=""
-          />
-          <div id="caption">
-            <h1>Nộm phố Hàm Long</h1>
-            <br />
-            <p>Nộm Thuận - 21 Hàm Long, Quận Hoàn Kiếm, Hà Nội</p>
-            <p style="max-width: 500px">
-              Những chiếc há cảo ở đây tuy nhỏ xinh nhưng bên trong nhân thịt
-              lại khá đầy đặn, ăn kèm cùng rau sống và nước chấm chua ngọt cực
-              kỳ hợp. Giá của những chiếc há cảo này lại rẻ đến bất ngờ, chỉ
-              15k/c nên quán luôn tấp nập khách tới mua. Há cảo ở đây được chiên
-              vàng óng, lớp vỏ bên ngoài giòn tan, khi cho vào miệng nhai đã cực
-              kì. Phần nhân bên trong có thịt xay và mộc nhĩ sần sật. Nước chấm
-              siêu ngon, vị rõ ràng, đủ hương sắc chua mặn ngọt, thêm đu đủ góp
-              cũng ngon nữa.
-            </p>
-            <p>rating</p>
-            <a
-              href="https://diadiemanuong.com/ha-noi/nom-thuan-ham-long/ghe-nha-tho-ham-long-an-nom-via-he-ngon-nuc-tieng-gan-xa"
-              >review</a
-            >
+          <img id="imgs" src="" alt="" />
+          <div id="info">
+            <h1 id="caption"></h1>
+            <hr/>
+            <p id="address"></p>
+            <p id="desc" style="max-width: 500px"></p>
+            <p id="like"><i class="fas fa-heart"></i> </p>
+            <p id="price"></p>
           </div>
         </div>
       </div>
     </div>
   </body>
-  <script src="JS/SS10_LAB.js"></script>
+  <!-- <script src="JS/SS10_LAB.js"></script> -->
   <script src="JS/imgmodal.js"></script>
+  <script src="JS/allfood.js"></script>
 </html>

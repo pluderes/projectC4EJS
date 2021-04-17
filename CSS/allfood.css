@@ -117,8 +117,7 @@ form:hover .fa {
   margin-bottom: 20px;
 }
 #border {
-  border-radius: 20px;
-  border: none;
+
 }
 .card {
   width: 450px;
@@ -171,7 +170,7 @@ form:hover .fa {
   color: #fff;
   opacity: 0;
   margin-top: 320px;
-  margin-left: 10px;
+  margin-left: 5px;
   transition: 0.5s all;
 }
 .card:hover .info {
@@ -184,6 +183,7 @@ form:hover .fa {
 }
 .name{
     word-wrap: break-word;
+    width: 200px;
 }
 .favo {
   margin-bottom: 10px;
@@ -215,13 +215,18 @@ form:hover .fa {
 /* Caption of Modal Image */
 #caption {
   margin: auto;
+  margin-top: 20px;
   display: block;
   width: 80%;
   max-width: 500px;
   text-align: left;
-  color: #ccc;
+  color: #ffffff;
   padding-left: 10px;
   padding-right: 10px;
+}
+#info>p{
+  margin-left: 10px;
+  margin-right: 10px;
 }
 #caption p{
   word-wrap: break-word;
