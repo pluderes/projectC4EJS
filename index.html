@@ -6,16 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Feeling hungry?</title>
     <link rel="stylesheet" href="CSS/index.css">
+    <!-- <link rel="stylesheet" href="allfood.html"> -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
     />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- <link href='https://fonts.googleapis.com/css?family=Cookie' rel='stylesheet'> -->
   </head>
   <body style="background: url('Image/banner2.jpg'); background-size: cover;background-repeat: no-repeat;">
       <nav class="navbar fixed-top navbar-expand-md navbar-dark navbar-theme" style="padding: 0;">
         <a class="navbar-brand" href="index.html">
-          <img src="Image/logoFood36streets.png" width="50" height="50" style="margin-left: 35px;" alt="">
+          <img src="Image/logoFood36streets.png" width="50" height="50" style="margin-left: 50px;" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -32,7 +34,7 @@
               <a class="nav-link" href="allfood.html">Nhiều món hơn tại đây</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="aboutdemo.html">Về tác giả</a>
+              <a class="nav-link" href="aboutdemo.html">Về chúng mình</a>
             </li>
             <!-- <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
@@ -54,7 +56,27 @@
                 <span id="like"></span>
               </a>
             </div>
+            <a href="#" id="btnDetail">Chi tiết</a>
             <a href="" id="btn">Món khác?</a>
+          </div>
+        </div>
+        <div id="myModal" class="modal">
+          <span class="close" style="color: white">&times;</span>
+          <div class="dialog">
+            <div class="content1" id="divContent">
+              <div class="row" id="detail">
+                <img id="imgs" src="" alt="" />
+                <div id="info">
+                  <h1 id="caption"></h1>
+                  <hr/>
+                  <p id="address"></p>
+                  <p id="desc" style="max-width: 500px"></p>
+                  <p id="likes"><i class="fas fa-heart"></i> </p>
+                  <p id="price"></p>
+                </div>
+              </div>
+              <hr>
+            </div>
           </div>
         </div>
       </div>

@@ -71,15 +71,65 @@ async function getDataAPI() {
   let name = document.getElementById("foodName");
   let like = document.getElementById("like");
   let img = document.getElementById("imgfood");
-  let randfood = document.getElementById('randomfood');
+  let randfood = document.getElementById("randomfood");
 
   console.dir(name);
   console.dir(like);
   console.dir(img);
   console.dir(randfood);
-  img.src = data[index]['food_img'];
+  img.src = data[index]["food_img"];
   name.innerHTML += `${data[index].food_name}`;
   like.innerHTML += `${data[index].like}`;
+
+  // detail
+  let imgs = document.getElementById("imgs");
+  let caption = document.getElementById("caption");
+  let addr = document.getElementById("address");
+  let desc = document.getElementById("desc");
+  let likes = document.getElementById("likes");
+  let price = document.getElementById("price");
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    let btnDetail = document.getElementById("btnDetail");
+    btnDetail.onclick = function () {
+      modal.style.display = "block";
+      imgs.src = data[index].food_img;
+      caption.innerHTML += `${data[index].food_name}`;
+      addr.innerHTML += `<b>Địa chỉ: </b>${data[index].Address}`;
+      desc.innerHTML += `<b>Giới thiệu: </b>${data[index].food_desc}`;
+      likes.innerHTML += `${data[index].like}`;
+      price.innerHTML += `<b>Giá: </b>${data[index].price} VND`;
+      console.log(`modal ${index}`);
+    };
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+      modal.style.display = "none";
+    };
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function () {
+    modal.style.display = "none";
+    caption.innerHTML = ``;
+    addr.innerHTML = ``;
+    desc.innerHTML = ``;
+    likes.innerHTML = `<i class="fas fa-heart"></i> `;
+    price.innerHTML = ``;
+
+    index = Math.floor(Math.random() * size);
+    img.src = data[index]["food_img"];
+    name.innerHTML = `${data[index].food_name}`;
+    like.innerHTML = `${data[index].like}`;
+  };
 }
 
 getDataAPI();
