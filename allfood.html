@@ -58,15 +58,23 @@
           <li class="nav-item">
             <a class="nav-link" href="aboutdemo.html">Về chúng mình</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" id="userlogin" href="dangNhapHTML.html">Đăng nhập</a>
-          </li>
+          </li> -->
         </ul>
       </div>
-      <form action="">
-        <input id="search" type="search" />
-        <i id="btnSearch" class="fa fa-search"></i>
-      </form>
+      <!-- <form class="form-inline">
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+          id="searchInput"
+        />
+        <button id="searchBtn" type="button" class="btn btn-outline-primary" disabled>
+          Tìm kiếm
+        </button>
+      </form> -->
     </nav>
     <!-- end menu -->
     <div id="divTitle">
@@ -92,24 +100,28 @@
             </div>
           </div>
           <div id="cmt">
-            <h2>Đánh giá</h2>
-            <hr>
-            <div class="allcmt">
-              <p id="nameCmt"><b>Tên: </b></p>
-              <p id="evaluate"><b>Đánh giá: </b></p>
-              <p id="comment"><b>Comment: </b></p>
-            </div>
+            <h2 id="titleCmt">Đánh giá</h2>
             <hr>
             <h2>Để lại cảm nhận của bạn</h2>
             <hr>
             <div class="newcmt">
               <div class="form-group">
-                <label for="sel1">Món này có ngon không?:</label>
+                <div class="form-group">
+                  <label for="message-text">Tên của bạn:</label
+                  ><br />
+                  <input
+                    id="namecmt"
+                    name="comment"
+                    rows="1"
+                    cols="50"
+                  ></input>
+                </div>
+                <label for="sel1">Món này có ngon không?</label>
                 <select class="form-control" id="sel1">
-                  <option value="1">---</option>
-                  <option value="2">Ngon tuyệt</option>
-                  <option value="3">Cũng ổn</option>
-                  <option value="4">Không ngon lắm</option>
+                  <option value="---">---</option>
+                  <option value="Ngon tuyệt">Ngon tuyệt</option>
+                  <option value="Cũng ổn">Cũng ổn</option>
+                  <option value="Không ngon lắm">Không ngon lắm</option>
                 </select>
               </div>
               <div>

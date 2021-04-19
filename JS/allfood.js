@@ -34,6 +34,7 @@ async function getDataAPI() {
   // save cmt
   let rating = document.getElementById("sel1");
   let cmt = document.getElementById("message-text");
+  let newname = document.getElementById("namecmt");
 
   //  get api user
   async function getLoginAPI() {
@@ -74,6 +75,7 @@ async function getDataAPI() {
     // console.dir(second.id);
     card.push(second.id);
   }
+
   // console.log(card);
   let length = Object.keys(card).length;
   for (let i = 0; i < length; i++) {
@@ -93,13 +95,23 @@ async function getDataAPI() {
 
       for (let j = 0; j < sizeCmt; j++) {
         if (dataCmt[j].food_id === dataFood[i].food_id) {
-          for (let l = 0; l < sizeLogin; l++) {
-            if (dataCmt[j].user_id === dataLogin[l].user_id) {
-              nameCmt.innerHTML += `${dataLogin[l].user_name}`;
-              evaluate.innerHTML += `${dataCmt[j].rating}`;
-              comments.innerHTML += `${dataCmt[j].comments}`;
-            }
-          }
+          // for (let l = 0; l < sizeLogin; l++) {
+          // if (dataCmt[j].user_id === dataLogin[l].user_id) {
+          let title = document.getElementById("titleCmt");
+          title.insertAdjacentHTML(
+            `afterend`,
+            `<hr>
+            <div class="allcmt">
+              <p id="nameCmt"><b>Tên: </b>${dataCmt[i].user_name}</p>
+              <p id="evaluate"><b>Đánh giá: </b>${dataCmt[j].rating}</p>
+              <p id="comment"><b>Comment: </b>${dataCmt[j].comments}</p>
+            </div>`
+          );
+          // nameCmt.innerHTML += `${dataCmt[i].user_name}`;
+          // evaluate.innerHTML += `${dataCmt[j].rating}`;
+          // comments.innerHTML += `${dataCmt[j].comments}`;
+          // }
+          // }
         }
 
         // post cmt
@@ -115,9 +127,9 @@ async function getDataAPI() {
             body: JSON.stringify({
               data: [
                 {
-                  user_id: `1`,
+                  user_name: `${namecmt.value}`,
                   food_id: `${dataCmt[j].food_id}`,
-                  rating: `${rating.innerHTML}`,
+                  rating: `${rating.value}`,
                   comments: `${cmt.value}`,
                 },
               ],
