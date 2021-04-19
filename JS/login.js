@@ -27,6 +27,7 @@ async function getLoginAPI() {
     });
     btn_signin.addEventListener("click", function () {
         location.href = "dangKiHTML.html";
+        // alert(userName.value);
     });
 }
 getLoginAPI();

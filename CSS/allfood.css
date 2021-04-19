@@ -52,9 +52,10 @@ form {
   border-radius: 25px;
   border: 4px solid white;
   padding: 5px;
+  margin-right: 50px;
 }
 
-input {
+#search {
   position: absolute;
   top: 0;
   left: 0;
@@ -89,7 +90,7 @@ form:hover {
   cursor: pointer;
 }
 
-form:hover input {
+form:hover #search {
   display: block;
 }
 
@@ -100,10 +101,14 @@ form:hover .fa {
 /* --------------------------------------------------------------- */
 /* title */
 #title{
-  margin-top: 100px; 
-  text-align: center; 
+  padding-top: 70px;
+  padding-bottom: 10px;
+  /* margin-top: 100px; */
+  text-align: center;
   color: #fff;
   text-transform: uppercase;
+  background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+  background-blend-mode: multiply;
 }
 
 /* content */
@@ -207,11 +212,9 @@ form:hover .fa {
   overflow-y: auto;
 }
 #detail{
-  margin: 0;
-  margin-left: 100px;
-  border-radius: 20px;
+  margin: auto;
+  border-radius: 20px 20px 0px 0px;
   width: fit-content;
-  font-family: co;
   background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
 }
 /* Caption of Modal Image */
@@ -231,6 +234,8 @@ form:hover .fa {
 #info>p{
   margin-left: 10px;
   margin-right: 10px;
+  font-family: Patrick Hand;
+  font-size: 21px;
 }
 #caption p{
   word-wrap: break-word;
@@ -238,7 +243,7 @@ form:hover .fa {
 .row>img{
   width: 550px;
   height: 550px;
-  border-radius: 20px 0 0 20px;
+  border-radius: 20px 0 0 0px;
 }
 /* Add Animation */
 #caption {  
@@ -274,4 +279,29 @@ form:hover .fa {
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
+}
+
+/* comment + rating */
+#sel1{
+  width: unset;
+}
+#cmt{
+  max-width: 1070px;
+  background-color: whitesmoke;
+  margin: auto;
+  padding-left: 20px;
+  border-radius: 0px 0px 20px 20px;
+}
+
+#cmt>h2{
+  text-align: center;
+  padding-top: 10px;
+}
+.cmt-footer{
+  padding-bottom: 10px;
+}
+#heart, #heartbroken{
+  color: red;
+  text-decoration: unset;
+  font-size: xx-large;
 }

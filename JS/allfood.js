@@ -1,9 +1,9 @@
 async function getDataAPI() {
-  let promise = await fetch(`https://sheetdb.io/api/v1/62a1kcoxwbvio`);
-  let data = await promise.json();
+  let promise = await fetch(`https://sheetdb.io/api/v1/d8fe4j4mgrr9m`);
+  let dataFood = await promise.json();
   // console.log(data);
 
-  let size = Object.keys(data).length;
+  let size = Object.keys(dataFood).length;
   // console.log(size);
 
   let img = document.getElementById("imgs");
@@ -13,27 +13,57 @@ async function getDataAPI() {
   let like = document.getElementById("like");
   let price = document.getElementById("price");
 
-  // console.dir(img);
-  // console.dir(name);
-  // console.dir(addr);
-  // console.dir(desc);
-  // console.dir(like);
-  // console.dir(price);
+  // user login
+  let user = document.getElementById("userlogin");
+  console.dir(user);
+
   let divRow = document.getElementById("divRow");
 
   var card = [];
   // Get the modal
   var modal = document.getElementById("myModal");
 
+  // call api Cmt
+  let nameCmt = document.getElementById("nameCmt");
+  let evaluate = document.getElementById("evaluate");
+  let comments = document.getElementById("comment");
+
+  let sizeLogin;
+  let dataLogin;
+
+  // save cmt
+  let rating = document.getElementById("sel1");
+  let cmt = document.getElementById("message-text");
+
+  //  get api user
+  async function getLoginAPI() {
+    let promise = await fetch(
+      "https://sheetdb.io/api/v1/c684dimdyx8aj?fbclid=IwAR28GQSWV-HxIKm03AhLyiFIqbfw43chGFWhL-oc_nz2BsZBa8okym0Vd_M"
+    );
+    dataLogin = await promise.json();
+    sizeLogin = Object.keys(dataLogin).length;
+  }
+  getLoginAPI();
+
+  let sizeCmt;
+  let dataCmt;
+  // get api comment
+  async function getCmtApi() {
+    let promise = await fetch("https://sheetdb.io/api/v1/o49nd7bsw9rod");
+    dataCmt = await promise.json();
+    sizeCmt = Object.keys(dataCmt).length;
+  }
+  getCmtApi();
+
   for (let i = 0; i < size; i++) {
     divRow.insertAdjacentHTML(
       `beforeend`,
       `<div class="wrapper col-sm-3">
         <div class="card" id="border${i}" style="border-radius: 20px; border: none;">
-                <img id="img" class="imgfood" src="${data[i].food_img}" alt="" />
+                <img id="img" class="imgfood" src="${dataFood[i].food_img}" alt="" />
                   <div class="info">
                     <h2 id="foodname" class="name">
-                     ${data[i].food_name}
+                     ${dataFood[i].food_name}
                     </h2>
                   </div>
         </div>
@@ -41,26 +71,72 @@ async function getDataAPI() {
     );
     var first = divRow.lastChild.lastChild;
     var second = first.previousSibling;
-    console.dir(second.id);
+    // console.dir(second.id);
     card.push(second.id);
   }
   // console.log(card);
   let length = Object.keys(card).length;
   for (let i = 0; i < length; i++) {
-    // Get the modal
-    var modal = document.getElementById("myModal");
+    // // Get the modal
+    // var modal = document.getElementById("myModal");
 
     // Get the image and insert it inside the modal - use its "alt" text as a caption
     var show = document.getElementById(`${card[i]}`);
     show.onclick = function () {
       modal.style.display = "block";
-      img.src = data[i].food_img;
-      name.innerHTML += `${data[i].food_name}`;
-      addr.innerHTML += `<b>Địa chỉ: </b>${data[i].Address}`;
-      desc.innerHTML += `<b>Giới thiệu: </b>${data[i].food_desc}`;
-      like.innerHTML += `${data[i].like}`;
-      price.innerHTML += `<b>Giá: </b>${data[i].price} VND`;
-      console.log(`modal ${i}`);
+      img.src = dataFood[i].food_img;
+      name.innerHTML += `${dataFood[i].food_name}`;
+      addr.innerHTML += `<b>Địa chỉ: </b>${dataFood[i].Address}`;
+      desc.innerHTML += `<b>Giới thiệu: </b>${dataFood[i].food_desc}`;
+      like.innerHTML += `${dataFood[i].like}`;
+      price.innerHTML += `<b>Giá: </b>${dataFood[i].price} VND`;
+
+      for (let j = 0; j < sizeCmt; j++) {
+        if (dataCmt[j].food_id === dataFood[i].food_id) {
+          for (let l = 0; l < sizeLogin; l++) {
+            if (dataCmt[j].user_id === dataLogin[l].user_id) {
+              nameCmt.innerHTML += `${dataLogin[l].user_name}`;
+              evaluate.innerHTML += `${dataCmt[j].rating}`;
+              comments.innerHTML += `${dataCmt[j].comments}`;
+            }
+          }
+        }
+
+        // post cmt
+        let btnSendcmt = document.getElementById("btnSend");
+        async function postCmt() {
+          // save cmt
+          let review = {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              data: [
+                {
+                  user_id: `1`,
+                  food_id: `${dataCmt[j].food_id}`,
+                  rating: `${rating.innerHTML}`,
+                  comments: `${cmt.value}`,
+                },
+              ],
+            }),
+          };
+          const res = await fetch(
+            `https://sheetdb.io/api/v1/o49nd7bsw9rod`,
+            review
+          );
+          console.log(await res.json());
+        }
+        btnSendcmt.onclick = function () {
+          postCmt();
+          alert("Đã gửi đánh giá của bạn. Cảm ơn!");
+          rating.value = `1`;
+          cmt.value = ``;
+          console.dir(rating);
+        };
+      }
     };
 
     // Get the <span> element that closes the modal
@@ -83,6 +159,9 @@ async function getDataAPI() {
     desc.innerHTML = ``;
     like.innerHTML = `<i class="fas fa-heart"></i> `;
     price.innerHTML = ``;
+    nameCmt.innerHTML = `<b>Tên: </b>`;
+    evaluate.innerHTML = `<b>Đánh giá: </b>`;
+    comments.innerHTML = `<b>Comment: </b>`;
   };
 }
 

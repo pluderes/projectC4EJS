@@ -14,7 +14,6 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
-    
   </head>
   <body
     style="
@@ -57,16 +56,16 @@
             <a class="nav-link" href="index.html">Trang chủ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="aboutdemo.html">Về tác giả</a>
+            <a class="nav-link" href="aboutdemo.html">Về chúng mình</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="dangNhapHTML.html">Đăng nhập</a>
+            <a class="nav-link" id="userlogin" href="dangNhapHTML.html">Đăng nhập</a>
           </li>
         </ul>
       </div>
       <form action="">
-        <input type="search" />
-        <i class="fa fa-search"></i>
+        <input id="search" type="search" />
+        <i id="btnSearch" class="fa fa-search"></i>
       </form>
     </nav>
     <!-- end menu -->
@@ -85,14 +84,61 @@
             <img id="imgs" src="" alt="" />
             <div id="info">
               <h1 id="caption"></h1>
-              <hr/>
+              <hr />
               <p id="address"></p>
               <p id="desc" style="max-width: 500px"></p>
-              <p id="like"><i class="fas fa-heart"></i> </p>
+              <p id="like"><i class="fas fa-heart" style="color: red;"></i> </p>
               <p id="price"></p>
             </div>
           </div>
-          <hr>
+          <div id="cmt">
+            <h2>Đánh giá</h2>
+            <hr>
+            <div class="allcmt">
+              <p id="nameCmt"><b>Tên: </b></p>
+              <p id="evaluate"><b>Đánh giá: </b></p>
+              <p id="comment"><b>Comment: </b></p>
+            </div>
+            <hr>
+            <h2>Để lại cảm nhận của bạn</h2>
+            <hr>
+            <div class="newcmt">
+              <div class="form-group">
+                <label for="sel1">Món này có ngon không?:</label>
+                <select class="form-control" id="sel1">
+                  <option value="1">---</option>
+                  <option value="2">Ngon tuyệt</option>
+                  <option value="3">Cũng ổn</option>
+                  <option value="4">Không ngon lắm</option>
+                </select>
+              </div>
+              <div>
+                <p><a href="#" id="heart" class="fas fa-heart 2x"></a> or <a href="#" id="heartbroken" class="fas fa-heart-broken 2x"></a></p>
+              </div>
+              <div class="form-group">
+                <label for="message-text">Một vài nhận xét:</label
+                ><br />
+                <textarea
+                  id="message-text"
+                  name="comment"
+                  rows="5"
+                  cols="80"
+                ></textarea>
+              </div>
+              <div class="cmt-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Thoát
+                </button>
+                <button id="btnSend" type="button" class="btn btn-primary">
+                  Gửi bình luận
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -101,6 +147,6 @@
     <!-- end test -->
   </body>
   <!-- <script src="JS/SS10_LAB.js"></script> -->
-  <script src="JS/imgmodal.js"></script>
+  <!-- <script src="JS/imgmodal.js"></script> -->
   <script src="JS/allfood.js"></script>
 </html>

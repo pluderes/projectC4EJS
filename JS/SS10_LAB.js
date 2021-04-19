@@ -61,7 +61,7 @@
 //   location.reload();
 // }
 async function getDataAPI() {
-  let promise = await fetch(`https://sheetdb.io/api/v1/62a1kcoxwbvio`);
+  let promise = await fetch(`https://sheetdb.io/api/v1/d8fe4j4mgrr9m`);
   let data = await promise.json();
   console.log(data);
 
